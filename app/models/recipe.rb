@@ -1,4 +1,7 @@
 class Recipe < ApplicationRecord
+
+  belongs_to :user
+
   def friendly_prep_time
     # input: 125
     # output: "2 Hours, 5 minutes"

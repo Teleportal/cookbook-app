@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(
                         title: params[:title],
-                        chef: params[:chef],
+                        user_id: current_user.id,
                         ingredients: params[:ingredients],
                         directions: params[:directions]
                         )
