@@ -5,8 +5,6 @@ class Recipe < ApplicationRecord
   has_many :categories, through: :category_recipes
 
   def friendly_prep_time
-    # input: 125
-    # output: "2 Hours, 5 minutes"
     hours = prep_time / 60
     minutes = prep_time % 60
     time_string = ""
