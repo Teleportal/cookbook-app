@@ -6,6 +6,8 @@
   <title>Cookbook App</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="recipes.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="index.js" defer></script>
 </head>
 
 <body>
@@ -45,30 +47,12 @@
       </form>
     </div>
   </nav>
+  <h1>All recipes</h1>
+  <div class="row">
+    
 
-  <div class="container">
-    <h1>All recipes</h1>
+<!-- Repeating Code -->
 
-    <h2><a href="/recipes/1">Egg</a></h2>
-    <h2>Chef: Josh</h2>
-
-    <p>Prep Time: 2</p>
-    <p>Ingredients: One live chicken</p>
-    <p>Directions: grasp chicken firmly, squeeze... gently</p>
-
-    <h2><a href="/recipes/2">Egg</a></h2>
-    <h2>Chef: Josh</h2>
-
-    <p>Prep Time: 2</p>
-    <p>Ingredients: One live chicken</p>
-    <p>Directions: grasp chicken firmly, squeeze... gently</p>
-
-    <h2><a href="/recipes/3">Egg</a></h2>
-    <h2>Chef: Josh</h2>
-
-    <p>Prep Time: 2</p>
-    <p>Ingredients: One live chicken</p>
-    <p>Directions: grasp chicken firmly, squeeze... gently</p>
 
   </div>
 
@@ -78,3 +62,19 @@
 </body>
 
 </html>
+
+
+<template id="recipe-card">
+  <div class="col-md-4">
+    <div class="card mb-5">
+      <div class="card-body">
+        <h2 class="card-title"><a href="/recipes/1">Egg</a></h2>
+        <h5 class="card-text">Chef: <span class="chef"></span></h5>
+
+        <p class="card-text">Prep Time: <span class="prep-time"></span></p>
+        <p class="card-text">Ingredients: <span class="ingredients"></span></p>
+        <p class="card-text">Directions: <span class="directions"></span></p>
+      </div>
+    </div>
+  </div>
+</template>
