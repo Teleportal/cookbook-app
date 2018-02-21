@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user, only: [:create]
+
   def index
     search_term = params[:search]
 
@@ -37,7 +39,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
 
     @recipe.title = params[:title] || @recipe.title
-    @recipe.chef = params[:chef] || @recipe.chef
     @recipe.ingredients = params[:ingredients] || @recipe.ingredients
     @recipe.directions = params[:directions] || @recipe.directions
     @recipe.save
