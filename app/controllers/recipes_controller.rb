@@ -41,9 +41,12 @@ class RecipesController < ApplicationController
     @recipe.title = params[:title] || @recipe.title
     @recipe.ingredients = params[:ingredients] || @recipe.ingredients
     @recipe.directions = params[:directions] || @recipe.directions
-    @recipe.save
-
-    render 'show.json.jbuilder'
+    if @recipe.save
+      render 'show.json.jbuilder'
+    else
+      render json: {errors: @recipe.errors.full_messages }, status: :unprocessable_entity
+      puts @recipe.errors.full_messages
+    end
   end
 
   def destroy
